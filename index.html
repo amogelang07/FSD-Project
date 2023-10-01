@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Add a script tag to include JavaScript -->
+    <script>
+        // Check if the page is running on localhost
+        if (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1') {
+        // Code for localhost
+            console.log('Running on localhost');
+        // Add any development-specific configurations or code here
+        } else {
+        // Code for production
+            console.log('Running on a production domain');
+        // Add any production-specific configurations or code here
+    }
+</script>
+
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+
+    <!-- Montserrat Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100&display=swap" rel="stylesheet">
+   
+    <!-- Material Icons  -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Symbols+Outlined" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="grid-container">
+
+        <!-- Header -->
+        <header class="header">
+            <div class="menu-icon" onclick="openSidebar()">
+                <span class="material-symbol-outlined">menu</span>
+            </div>
+            <div class="header-left">
+                <span class="material-symbols-outlined">search</span>
+            </div>
+            <div class="header-right">
+                <span class="material-symbols-outlined">notifications</span>
+                <span class="material-symbols-outlined">mail</span>
+                <span class="material-symbols-outlined">account_circle</span>
+            </div>
+        </header>
+        <!-- End header -->
+
+        <!-- Sidebar -->
+        <aside id="sidebar">
+            <div class = "sidebar-title">
+              <div class="sidebar-brand" >
+                <span class="material-symbols-outlined">sell</span> Cars4Sale 
+              </div>
+              <span class="material-symbols-outlined" onclick="closeSidebar()">close</span> 
+            </div>
+            <ul class="sidebar-list-item">
+                <li class="sidebar-list-item">
+                    <span class="material-symbols-outlined">dashboard</span> Dashboard
+                </li>
+                <li class="sidebar-list-item">
+                    <span class="material-symbols-outlined"> directions_car</span> Model
+                </li>
+                <li class="sidebar-list-item">
+                    <span class="material-symbols-outlined">payments</span> Price
+                </li>
+            </ul>
+        </aside>
+        <!-- End sidebar -->
+
+        <!-- Main -->
+        <main class="main-container">
+            <div class="main-title">
+                <p class="font-weight-bold">DASHBOARD</p>
+            </div>
+
+            <div class="main-cards">
+
+                <div class="card">
+                    <div class="card-inner">
+                        <p class="text-primary">CARS</p>
+                        <span class="material-symbols-outlined"> directions_car</span>   
+                    </div>
+                    <span class = "text-primary font-weight-bold">205</span>
+                 </div>
+
+                 <div class="card">
+                    <div class="card-inner">
+                        <p class="text-primary">MODEL</p>
+                        <span class="material-symbols-outlined">branding_watermark </span> 
+                    </div>
+                    <span class = "text-primary font-weight-bold">22</span>
+                 </div>
+
+                 <div class="card">
+                    <div class="card-inner">
+                        <p class="text-primary">BODY-STYLE</p>
+                        <span class="material-symbols-outlined">car_rental</span>   
+                    </div>
+                    <span class = "text-primary font-weight-bold">5</span>
+                 </div>
+
+                 <div class="card">
+                    <div class="card-inner">
+                        <p class="text-primary">FUEL-TYPE</p>
+                        <span class="material-symbols-outlined">local_gas_station</span>
+                    </div>
+                    <span class = "text-primary font-weight-bold">2</span>
+                 </div>
+
+            </div>
+
+            <div class="charts">
+
+                <div class="charts-card">
+                    <p class="chart-title"> Average Price For Each Model</p>
+                    <div id="bar-chart"></div>
+                </div>
+
+                <div class="charts-card">
+                    <p class="chart-title"> Total Cars Available</p>
+                    <div id="pie-chart"></div>
+                </div>
+            
+            </div>
+
+            
+        </main>
+        <!-- End Main -->
+
+    </div>
+
+    <!-- Scripts -->
+    <!-- Chartsjs -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/apexcharts/3.42.0/apexcharts.min.js"></script>
+
+    <!-- Custom JS  -->
+    <script src="scripts.js"></script>
+</body>
+</html>
